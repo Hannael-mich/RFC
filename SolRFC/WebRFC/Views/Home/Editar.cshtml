@@ -1,0 +1,41 @@
+﻿@using Entidad
+@using Negocio
+@model E_RFC
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Editar</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <h1 class="display-3">Editar Datos</h1> 
+        <form action="/Home/Editar" method="post">
+            
+            <input type="hidden" name="ID" value="@Model.ID" /><!--Parte del ID-->
+
+            <label>Nombre</label>
+            <input type="text" name="nombre" class="form-control" value="@Model.nombre" />
+
+            <label>Apellido Paterno</label>
+            <input type="text" name="ApellidoPaterno" class="form-control" value="@Model.apellidoPaterno" />
+
+            <label>Apellido Materno</label>
+            <input type="text" name="apellidoMaterno" class="form-control" value="@Model.apellidoMaterno" />
+
+            <label>Fecha de nacimiento</label>
+            <input type="date" name="fechaNacimiento" class="form-control" value="@Model.fechaNacimiento.ToString("yyyy-MM-dd")" />
+            
+            <!--<input type="hidden" name="RFC" value="@*Model.RFC"*@ /><!--RFC-->
+
+            <input type="submit" value="Guardar" class="btn btn-success" />
+        </form>
+    </div>
+</body>
+</html>

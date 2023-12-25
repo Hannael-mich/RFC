@@ -1,0 +1,90 @@
+﻿@using Entidad
+@using Negocio
+@model List<E_RFC>
+
+@{
+    Layout = null;
+
+    string color = "black";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>BaseDatos</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <h1>Esta es la base de datos</h1>
+        @if (TempData["mensaje"] != null)
+        {
+            <div class="alert alert-success">
+                @TempData["mensaje"]
+            </div>
+        }
+        @if (TempData["error"] != null)
+        {
+            <div class="alert alert-danger">
+                @TempData["error"]
+            </div>
+        }
+
+        <form action="/Home/Buscar" method="post" mt-3 mb-3>
+            <div class="row mb-4">
+                <div class="col-6">
+                    <input type="text" name="texto" class="form-control" placeholder="Buscar..." />
+                </div>
+                <div class="col-2">
+                    <input type="submit" value="Buscar" class="btn btn-success" />
+                </div>
+            </div>
+        </form>
+
+        <div class="row">
+            <h2>Hay @Model.Count Ciudadanos</h2>
+        </div>
+
+        <table class="table table-bordered table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Fecha Nacimiento</th>
+                    <th scope="col">RFC</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (E_RFC rfc in Model)
+                {
+                    color = "black";
+                    List<E_RFC> ls = Model.Where(x => x.RFC == rfc.RFC).ToList();
+                    if(ls.Count > 1)
+                    {
+                        color = "red";
+                    }
+                    <tr>
+                        <td style="color:@color">@rfc.ID</td>
+                        <td style="color:@color">@rfc.nombre @rfc.apellidoPaterno @rfc.apellidoMaterno</td>
+                        <td style="color:@color">@rfc.fechaNacimiento.ToString("yyyy-MM-dd")</td>
+                        <td style="color:@color">@rfc.RFC</td>
+                        <td>
+                            <a href="/Home/ObtenerParaEditar?idRFC=@rfc.ID" class="btn btn-info">EDITAR</a>
+                            <a href="/Home/Eliminar?idRFC=@rfc.ID" class="btn btn-danger">BORRAR</a>
+                        </td>
+                    </tr>
+
+                }
+            </tbody>
+        </table>
+        <br /><br />
+        <a href="/Home/IrAgregar" class="btn btn-info">Generar otro RFC</a>
+        <a href="/Home/Index" class="btn btn-info">Inicio</a>
+
+    </div>
+
+</body>
+</html>

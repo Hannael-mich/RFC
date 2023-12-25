@@ -1,0 +1,110 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>VistaAgregar</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <form action="/Home/Agregar" method="post">
+        <section class="vh-100 gradient-custom">
+            <div class="container py-5 h-100">
+                <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col-10 col-md-6 col-lg-4 col-xl-5">
+                        <div class="card bg-dark text-white" style="border-radius: 1rem;">
+                            <div class="card-body p-5 text-center">
+
+                                <div class="mb-md-3 mt-md-2 pb-3">
+
+                                    @if (TempData["mensaje"] != null)
+                                    {
+                                        <div class="alert alert-success">
+                                            @TempData["mensaje"]
+                                        </div>
+                                    }
+                                    @if (TempData["error"] != null)
+                                    {
+                                        <div class="alert alert-danger">
+                                            @TempData["error"]
+                                        </div>
+                                    }
+
+                                    <h4 class="fw-bold mb-2 text-uppercase">Ingrese los siguientes datos</h4>
+                                    <p class="text-white-45 mb-3">Para la generacion de su RFC</p>
+
+                                    <div class="form-outline form-white mb-2">
+
+                                        <label>Nombre(s):</label>
+                                        <input type="text" name="Nombre" class="form-control form-control-lg" placeholder="Escribe tu(s) nombre(s) " />
+                                    </div>
+
+                                    <div class="form-outline form-white mb-2">
+                                        <label>Apellido Paterno:</label>
+                                        <input type="text" name="ApellidoPaterno" class="form-control form-control-lg" placeholder="Escribe tu primer apellido" />
+                                    </div>
+
+                                    <div class="form-outline form-white mb-2">
+                                        <label>Apellido Materno:</label>
+                                        <input type="text" name="ApellidoMaterno" class="form-control form-control-lg" placeholder="Escribe tu segundo apellido" />
+                                    </div>
+
+                                    <div class="form-outline form-white mb-2">
+                                        <label>Fecha de Nacimiento:</label>
+                                        <input type="date" name="FechaNacimiento" class="form-control form-control-lg" />
+                                        <br />
+                                    </div>
+
+                                    <input type="submit" value="Genera tu RFC" class="btn btn-info" />
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </form>
+</body>
+</html>
+
+
+<!--<h1>Ingrese los siguientes datos</h1>
+@*if (TempData["mensaje"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["mensaje"]
+    </div>
+}*@
+@*if (TempData["error"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["error"]
+    </div>
+}*@
+<form action="/Home/Agregar" method="post">
+
+    <label>Nombre(s):</label>
+    <input type="text" name="Nombre" placeholder="Escribe tu(s) nombre(s)" />
+    <br /><br />
+
+    <label>Apellido Paterno:</label>
+    <input type="text" name="ApellidoPaterno" placeholder="Escribe tu primer apellido" />
+    <br /><br />
+
+    <label>Apellido Materno:</label>
+    <input type="text" name="ApellidoMaterno" placeholder="Escribe tu segundo apellido" />
+    <br /><br />
+
+    <label>Fecha de Nacimiento:</label>
+    <input type="date" name="FechaNacimiento" />
+    <br /><br />
+
+    <input type="submit" value="Genera tu RFC" />
+
+</form>-->

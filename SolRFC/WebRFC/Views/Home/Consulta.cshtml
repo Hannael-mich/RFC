@@ -1,0 +1,61 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Consulta</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <style>
+
+        .block {
+            text-align: center;
+        }
+
+        .list {
+            text-align: left;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+
+    <!--<div class="card"  > -->
+        <div class="block" >
+            @if (TempData["mensaje"] != null)
+            {
+                <div class="alert alert-success">
+                    @TempData["mensaje"]
+                </div>
+            }
+            @if (TempData["error"] != null)
+            {
+                <div class="alert alert-danger">
+                    @TempData["error"]
+                </div>
+            }
+
+
+            <table>
+            </table>
+
+            <br /><br />
+            <h1>RFC</h1>
+            <h2>Genera tu Registro Federal de Contribuyentes</h2>
+            <h2>Solo necesitamos:</h2>
+            <ul class="list">
+                <li>Nombre completo en mayúsculas sin acentos ni diéresis</li>
+                <li>Fecha de nacimiento</li>
+            </ul>
+            <h2>Vamos a crear tu RFC</h2>
+            <a href="/Home/IrAgregar" class="btn btn-info">Iniciar</a>
+
+
+        </div>
+     <!--</div>-->
+</body>
+</html>

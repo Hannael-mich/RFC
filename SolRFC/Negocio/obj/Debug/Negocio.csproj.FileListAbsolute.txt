@@ -1,0 +1,11 @@
+C:\Users\thann\source\repos\SolRFC\Negocio\bin\Debug\Negocio.dll
+C:\Users\thann\source\repos\SolRFC\Negocio\bin\Debug\Negocio.pdb
+C:\Users\thann\source\repos\SolRFC\Negocio\bin\Debug\Datos.dll
+C:\Users\thann\source\repos\SolRFC\Negocio\bin\Debug\Entidad.dll
+C:\Users\thann\source\repos\SolRFC\Negocio\bin\Debug\Datos.pdb
+C:\Users\thann\source\repos\SolRFC\Negocio\bin\Debug\Entidad.pdb
+C:\Users\thann\source\repos\SolRFC\Negocio\obj\Debug\Negocio.csproj.AssemblyReference.cache
+C:\Users\thann\source\repos\SolRFC\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\thann\source\repos\SolRFC\Negocio\obj\Debug\Negocio.csproj.CopyComplete
+C:\Users\thann\source\repos\SolRFC\Negocio\obj\Debug\Negocio.dll
+C:\Users\thann\source\repos\SolRFC\Negocio\obj\Debug\Negocio.pdb

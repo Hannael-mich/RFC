@@ -1,0 +1,69 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>TuRFC</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <style>
+        
+    </style>
+</head>
+<body>
+    <!--<div>
+        <h1>Tu RFC es:</h1>
+        @*if (TempData["mensaje"] != null)
+        {
+            <div class="alert alert-success">
+                @TempData["mensaje"]
+            </div>
+        }*@
+        @*if (TempData["error"] != null)
+        {
+            <div class="alert alert-danger">
+                @TempData["error"]
+            </div>
+        }*@
+        <br /><br />
+        <a href="/Home/IrAgregar" class="btn btn-info">Generar otro RFC</a>
+        <br /><br />
+        <a href="/Home/IrBaseDatos" class="btn btn-info">Ir a Base de Datos</a>
+        <br /><br />
+        <a href="/Home/Index" class="btn btn-info">Salir</a>
+
+    </div>-->
+    <section class="vh-100 gradient-custom">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-10 col-md-6 col-lg-4 col-xl-5">
+                    <div class="card bg-dark text-white" style="border-radius: 1rem;">
+                        <div class="card-body p-5 text-center">
+
+                            <div class="mb-md-3 mt-md-2 pb-3">
+
+
+
+                                <h2 class="fw-bold mb-2 text-uppercase">Tu RFC es:</h2>
+                                <h4>@TempData["mensaje"]</h4>
+                                <br /><br />
+                                <a href="/Home/IrAgregar" class="btn btn-info">Generar otro RFC</a>
+                                <br /><br />
+                                <a href="/Home/IrBaseDatos" class="btn btn-info">Ir a Base de Datos</a>
+                                <br /><br />
+                                <a href="/Home/Index" class="btn btn-info">Salir</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
